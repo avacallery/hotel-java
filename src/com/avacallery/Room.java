@@ -1,5 +1,8 @@
 package com.avacallery;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Room {
     int number;
     String type;
@@ -8,6 +11,7 @@ public class Room {
     boolean needsCleaning;
     String occupant;
     int price;
+    String bed;
 
     public Room(
             int number,
@@ -16,7 +20,8 @@ public class Room {
             boolean isOccupied,
             boolean needsCleaning,
             String occupant,
-            int price) {
+            int price,
+            String bed) {
 
         this.number = number;
         this.type = type;
@@ -25,12 +30,22 @@ public class Room {
         this.needsCleaning = needsCleaning;
         this.occupant = occupant;
         this.price = price;
+        this.bed = bed;
     }
 
-    public boolean reserveRoom(boolean isOccupied, String occupant, boolean needsCleaning) {
+    static public void reserveRoom(boolean isOccupied, String occupant, boolean needsCleaning) {
         if (isOccupied = true) {
             System.out.println(occupant + "has reserved this room.");
         }
-        return false;
     }
+
+    public String roomInfo() {
+        return "Your room number: " + number + "\n" +
+                "Your room type: " + type + "\n" +
+                "Your floor number: " + floor + "\n" +
+                "Name under reservation: " + occupant  + "\n" +
+                "Price: " + price + "\n" +
+                "Bed size: " + bed;
+    };
+
 }
